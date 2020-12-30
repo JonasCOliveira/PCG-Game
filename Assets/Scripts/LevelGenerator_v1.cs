@@ -166,7 +166,7 @@ public class LevelGenerator_v1 : MonoBehaviour
             {
                 Debug.Log("Coin respawn");
                 spawnPositionCoin = lastStartPosition.x  + (lastEndPosition.x - lastStartPosition.x)/2;
-                theCoinGenerator.SpawnCoins(new Vector3(spawnPositionCoin + widthChange + 0.5f, heightChange + 0.8f, lastEndPosition.z));
+                theCoinGenerator.SpawnCoins(new Vector3(spawnPositionCoin + widthChange, heightChange + 0.8f, lastEndPosition.z));
             }
         }
 
