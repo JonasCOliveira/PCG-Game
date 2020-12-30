@@ -57,7 +57,7 @@ public class LevelGenerator_v1 : MonoBehaviour
         }
         gameReady = true;
     }
-    
+
     private void Update()
     {
         float distanceFromEnd = Vector3.Distance(player.transform.position, lastEndPosition);
@@ -144,7 +144,7 @@ public class LevelGenerator_v1 : MonoBehaviour
         //lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
         PlatformHeight();
         Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count -1 )];
-        Transform lastLevelPartTransform; 
+        Transform lastLevelPartTransform;
         lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, new Vector3(lastEndPosition.x + widthChange, heightChange, lastEndPosition.z));
 
         //Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, new Vector3(lastEndPosition.x + widthChange, heightChange, lastEndPosition.z));
@@ -165,7 +165,7 @@ public class LevelGenerator_v1 : MonoBehaviour
             if (Random.Range(0f, 30f) < randomCoinThreshold)
             {
                 Debug.Log("Coin respawn");
-                spawnPositionCoin = (lastEndPosition.x - lastStartPosition.x)/2;
+                spawnPositionCoin = lastStartPosition.x  + (lastEndPosition.x - lastStartPosition.x)/2;
                 theCoinGenerator.SpawnCoins(new Vector3(spawnPositionCoin + widthChange + 0.5f, heightChange + 0.8f, lastEndPosition.z));
             }
         }
